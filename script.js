@@ -13,7 +13,12 @@ function wyczysc() {
 
 function oblicz() {
   try {
-    ekran.value = eval(ekran.value);
+    var wynik = eval(ekran.value);
+    if (!isFinite(wynik)) {
+      ekran.value = "Błąd";
+    } else {
+      ekran.value = wynik;
+    }
   } catch (e) {
     ekran.value = "Błąd";
   }
